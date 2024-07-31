@@ -302,105 +302,176 @@
 
 // ===========Search=========//
 
-class Node{
-    constructor(value){
-        this.value=value
-        this.next=null
-    }
-}
-
-class linkedList{
-    constructor(){
-        this.head=null
-        this.size=0
-    }
-    isempty(){
-        return this.size===0
-    }
-    append(value){
-        const node=new Node (value)
-        if(this.isempty()){
-         this.head=node
-        }else{
-            let prev=this.head
-            while(prev.next){
-                prev=prev.next
-            }
-            prev.next=node
-            
-        }
-        this.size++
-    }
-
-//     search(value){
-//         console.log(this.head,'length');
-//         if(this.isempty()){
-//             return -1
-//         }
-//         let i=0
-//         let curr = this.head
-//         while(curr){
-//         if(curr.value===value){
-//             return i
-//         }
-//         curr=curr.next
-//         i++
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
 //     }
-//     return -1
-//   }
-searchWithIndex(index){
-    if(index<0 || index >=this.size){
-        return -1
-    }
-    if(index===0){
-        return this.head.value
-    }else{
-        let prev=this.head
-        let count=0
-        while(prev){
-            if(count === index){
-                return prev.value
-            }
-            prev=prev.next
-            count++
+// }
 
-        }
-        return -1
-    }
-}
+// class linkedList{
+//     constructor(){
+//         this.head=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+//     append(value){
+//         const node=new Node (value)
+//         if(this.isempty()){
+//          this.head=node
+//         }else{
+//             let prev=this.head
+//             while(prev.next){
+//                 prev=prev.next
+//             }
+//             prev.next=node
+            
+//         }
+//         this.size++
+//     }
 
-reverce(value){
-    let prev=null
-    let current=this.head
-    while(current){
-        let next=current.next
-        current.next=prev
-        prev=current
-        current=next
-    }
-    this.head=prev
-}
+// //     search(value){
+// //         console.log(this.head,'length');
+// //         if(this.isempty()){
+// //             return -1
+// //         }
+// //         let i=0
+// //         let curr = this.head
+// //         while(curr){
+// //         if(curr.value===value){
+// //             return i
+// //         }
+// //         curr=curr.next
+// //         i++
+// //     }
+// //     return -1
+// //   }
+// searchWithIndex(index){
+//     if(index<0 || index >=this.size){
+//         return -1
+//     }
+//     if(index===0){
+//         return this.head.value
+//     }else{
+//         let prev=this.head
+//         let count=0
+//         while(prev){
+//             if(count === index){
+//                 return prev.value
+//             }
+//             prev=prev.next
+//             count++
+
+//         }
+//         return -1
+//     }
+// }
+
+// reverce(value){
+//     let prev=null
+//     let current=this.head
+//     while(current){
+//         let next=current.next
+//         current.next=prev
+//         prev=current
+//         current=next
+//     }
+//     this.head=prev
+// }
     
-    display(){
+//     display(){
 
-        let current=this.head
-        while(current != null){
-            console.log(current.value);
-            current=current.next
-        }
-    }
-}
+//         let current=this.head
+//         while(current != null){
+//             console.log(current.value);
+//             current=current.next
+//         }
+//     }
+// }
 
-const link= new linkedList()
+// const link= new linkedList()
 
-link.append(23)
-link.append(78)
-link.append(87)
+// link.append(23)
+// link.append(78)
+// link.append(87)
 
-console.log(link.searchWithIndex(1),'val');
-// console.log(link.reverce(),"reverce kitty");
-link.reverce()
-link.display()
+// console.log(link.searchWithIndex(1),'val');
+// // console.log(link.reverce(),"reverce kitty");
+// link.reverce()
+// link.display()
 
+
+
+
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+
+// class linkedList{
+//     constructor(){
+//         this.head=null
+//         this.tail=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+
+//     append(value){
+//         const node=new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             this.tail.next=node
+//             this.tail=node
+//         }
+//         this.size++
+//         return value
+//     }
+
+//     prepend(value){
+//         const node = new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             node.next=this.head
+//             this.head=node
+//         }
+//         this.size++
+//         return value
+//     }
+
+
+
+
+
+
+//     display(){
+//         let current=this.head
+//         while(current != null){
+//             console.log(current.value);
+//             current=current.next
+//         }
+//     }
+
+
+// }
+
+
+// const link = new linkedList()
+
+// link.append(12)
+// link.append(89)
+// link.prepend(126)
+// link.prepend(895)
+
+// link.display()
 
 
