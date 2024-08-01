@@ -23,4 +23,27 @@ function Factorial(n){
     return result
 }
 
-console.log(Factorial(4));
+console.log(Factorial(4));    //output 48
+
+//====Big-O = O(n)
+
+
+//=========PrimeNumber======//
+
+function isPrime(n){
+    if(n < 2){
+        return false
+    }
+    for(let i=2; i < n ; i++){
+        if(n % i === 0){
+            return false
+        }
+    }
+    return true
+}
+
+console.log(isPrime(5));
+console.log(isPrime(82));
+console.log(isPrime(22));
+
+//====Big-O =O(n)
