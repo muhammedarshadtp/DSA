@@ -6,7 +6,7 @@
 
 // class Node{
 //     constructor(value){
-//         this.head=value
+//         this.value =value
 //         this.next=null
 //     }
 // }
@@ -403,7 +403,7 @@
 // link.display()
 
 
-
+//==================Append and Prepend===================//
 
 // class Node{
 //     constructor(value){
@@ -474,4 +474,88 @@
 
 // link.display()
 
+
+
+//=============RemovefromFront============//
+
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+
+    }
+}
+
+class linkedList{
+    constructor(){
+        this.head=null
+        this.tail=null
+        this.size=0
+    }
+    isempty(){
+        return this.size===0
+    }
+    append(value){
+        const node = new Node(value)
+        if(this.isempty()){
+            this.head=node
+            this.tail=node
+        }else{
+            this.tail.next=node
+            this.tail=node
+        }
+        this.size++
+        return value
+    }
+
+    removeFromFront(value){
+        if(this.isempty()){
+            return null
+        }
+        const val = this.head.value
+        this.head=this.head.next
+        this.size--
+        return val
+    }
+    removeFromEnd(){
+        if(this.isempty()){
+            return null
+        }
+        const valuee=this.tail.value
+        if(this.size===1){
+            this.head=null
+            this.tail=null
+        }else{
+            let prev = this.head
+            while(prev.next !== this.tail){
+                prev = prev.next
+            }
+            prev.next=null
+            this.tail=prev
+        }
+        this.size--
+        return valuee
+    }
+
+    display(){
+        let current = this.head
+        while(current != null){
+            console.log(current.value);
+            current = current.next
+        }
+    }
+}
+
+const link = new linkedList()
+
+link.append(129)
+link.append(23)
+link.append(123)
+link.append(233)
+link.append(263)
+
+
+link.removeFromEnd()
+link.display()
 
