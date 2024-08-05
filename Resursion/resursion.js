@@ -50,3 +50,16 @@
 // console.log(sample('rashi'))  //output='ihsar'
 
 
+
+// // =============Resursion print One to five=============//
+
+// function add(n){
+//     console.log(n);
+//     if(n==5){
+//         return n
+//     }
+    
+//     return add(n+1)
+// }
+
+// add(1)
