@@ -15,6 +15,17 @@
 // console.log(RecursionFibonacci(6,'f'));  //(8)
 
 
+// function sum(n){
+//     if(n<2){
+//         return n
+//     }
+
+//     return sum(n-1) +sum(n-2)
+// }
+
+// console.log(sum(6));
+
+
 
 
 //===========RecursionFactorial==========//
@@ -37,17 +48,23 @@
 
 //============
 
-// function sample(str,i=0){
-//     if(str.length-1===i){
-//         return str[i]
-//     }
+function sample(str,i=0){
+    if(str.length-1===i){
+        return str[i]
+    }
     
-//     return sample(str,i+1)  + str[i] 
+    return sample(str,i+1)  + str[i] 
+}
+
+
+
+console.log(sample('rashi'))  //output='ihsar'
+
+
+// function string(str){
+//     return str.split("").reverse().join('')
 // }
-
-
-
-// console.log(sample('rashi'))  //output='ihsar'
+// console.log(sample('rashi')) 
 
 
 
@@ -63,3 +80,20 @@
 // }
 
 // add(1)
+
+
+// function isPalindrome(arr,start=0,end=arr.length-1){
+//     if(start>=end){
+//         return true
+//     }
+//     if(arr[start] !== arr[end]){
+//         return false
+//     }
+//     return isPalindrome(arr,start+1,end-1)
+// }
+
+// console.log(isPalindrome('101101')); // Should print true
+// console.log(isPalindrome('2030'));   // Should print false
+
+
+
