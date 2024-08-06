@@ -560,65 +560,144 @@
 // link.display()
 
 
-class Node {
-    constructor(data) {
-        this.data = data
-        this.next = null
+// class Node {
+//     constructor(data) {
+//         this.data = data
+//         this.next = null
 
+//     }
+// }
+
+// class Slinkedlist {
+//     constructor() {
+//         this.head = null
+//         this.tail = this.tail
+//     }
+
+//     addNode(data) {
+//         const newnode = new Node(data)
+//         if (this.head == null) {
+//             this.head = newnode
+//         } else {
+//             this.tail.next = newnode
+//         }
+//         this.tail = newnode
+//     }
+
+
+//     delete(data) {
+//         let current = this.head
+//         let prev = null
+//         if (current.data == data) {
+//             this.head = this.head.next
+//             return
+
+//         }
+//         while (current != null) {
+//             if (current.data == data) {
+//                 prev.next = current.next
+//                 break;
+//             }
+//             prev = current
+//             current = current.next
+
+//         }
+//     }
+
+//     display() {
+//         let temp = this.head
+//         while (temp != null) {
+//             console.log(temp.data);
+//             temp = temp.next
+//         }
+//     }
+
+
+// }
+
+// const list = new Slinkedlist()
+// list.addNode(10)
+// list.addNode(20)
+// list.addNode(30)
+// list.addNode(40)
+// list.delete(30)
+// list.display()
+
+class Node{
+    constructor(data){
+        this.data=data
+        this.next=null
     }
 }
 
-class Slinkedlist {
-    constructor() {
-        this.head = null
-        this.tail = this.tail
+class Linkedlist{
+    constructor(){
+        this.head=null
+        this.tail=null
+        this.size=0
     }
-
-    addNode(data) {
+    isempty(){
+        return this.size===0
+    }
+    prepent(data){
+        const node = new Node(data)
+        if(this.isempty()){
+            this.head=node
+            this.tail=node
+        }else{
+            node.next=this.head
+            this.head=node
+        }
+        this.size++
+    }
+    appent(data){
         const newnode = new Node(data)
-        if (this.head == null) {
-            this.head = newnode
-        } else {
-            this.tail.next = newnode
+        if(this.isempty()){
+            this.head=newnode
+            this.tail=newnode
+        }else{
+            this.tail.next=newnode
+            this.tail=newnode
         }
-        this.tail = newnode
+        this.size++
     }
-
-
-    delete(data) {
-        let current = this.head
-        let prev = null
-        if (current.data == data) {
-            this.head = this.head.next
-            return
-
+    middle(){
+       let s=this.head
+       let f=this.head
+       while(f && f.next){
+         s=s.next
+         f=f.next.next
+       } 
+       return s
+    }
+    reverse(){
+        let prev=null
+        let curr=this.head
+        while(curr){
+            let next=curr.next
+            curr.next=prev
+            prev=curr
+            curr=next
         }
-        while (current != null) {
-            if (current.data == data) {
-                prev.next = current.next
-                break;
-            }
-            prev = current
-            current = current.next
-
+        this.head=prev
+    }
+    display(){
+        let current =this.head
+        while(current!=null){
+            console.log(current.data);
+            current=current.next
         }
     }
-
-    display() {
-        let temp = this.head
-        while (temp != null) {
-            console.log(temp.data);
-            temp = temp.next
-        }
-    }
-
-
 }
 
-const list = new Slinkedlist()
-list.addNode(10)
-list.addNode(20)
-list.addNode(30)
-list.addNode(40)
-list.delete(320)
+const list = new Linkedlist()
+list.appent(23)
+list.appent(90)
+list.prepent(12)
+list.prepent(14)
+list.prepent(15)
+list.prepent(27)
+list.prepent(17)
+list.reverse()
+console.log(list.middle().data,'middle element kitty');
 list.display()
