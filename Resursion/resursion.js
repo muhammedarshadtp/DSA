@@ -48,17 +48,17 @@
 
 //============
 
-function sample(str,i=0){
-    if(str.length-1===i){
-        return str[i]
-    }
+// function sample(str,i=0){
+//     if(str.length-1===i){
+//         return str[i]
+//     }
     
-    return sample(str,i+1)  + str[i] 
-}
+//     return sample(str,i+1)  + str[i] 
+// }
 
 
 
-console.log(sample('rashi'))  //output='ihsar'
+// console.log(sample('rashi'))  //output='ihsar'
 
 
 // function string(str){
@@ -96,4 +96,41 @@ console.log(sample('rashi'))  //output='ihsar'
 // console.log(isPalindrome('2030'));   // Should print false
 
 
+//===========Array resursion find sum============//
 
+
+// let array=[1,2,3,4];
+
+// function addArray(array){
+//     if(array.length==0){
+//         return 0;
+//     }
+//     return array.shift()+addArray(array);
+// }
+
+// console.log(addArray(array));
+
+
+
+function isPalindrome(str,start=0,end=str.length-1){
+    if(start >= end){
+        return true
+    }
+
+    if(str[start] !== str[end]){
+        return false
+    }
+    return isPalindrome(str,start + 1,end - 1)
+}
+
+console.log(isPalindrome('malayalam'));
+// function isPalindrome(str, start = 0, end = str.length - 1) {
+//     if (start >= end) {
+//         return true;
+//     }
+
+//     if (str[start] !== str[end]) {
+//         return false;
+//     }
+//     return isPalindrome(str, start + 1, end - 1);
+// }
