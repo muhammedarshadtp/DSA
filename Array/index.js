@@ -623,13 +623,14 @@
 // list.delete(30)
 // list.display()
 
+// 
+
 class Node{
-    constructor(data){
-        this.data=data
+    constructor(value){
+        this.value=value
         this.next=null
     }
 }
-
 class Linkedlist{
     constructor(){
         this.head=null
@@ -639,65 +640,57 @@ class Linkedlist{
     isempty(){
         return this.size===0
     }
-    prepent(data){
-        const node = new Node(data)
+    append(value){
+        const node=new Node(value)
         if(this.isempty()){
             this.head=node
             this.tail=node
         }else{
-            node.next=this.head
-            this.head=node
+            this.tail.next=node
+            this.tail=node
         }
         this.size++
     }
-    appent(data){
-        const newnode = new Node(data)
+    deletemiddle(){
         if(this.isempty()){
-            this.head=newnode
-            this.tail=newnode
-        }else{
-            this.tail.next=newnode
-            this.tail=newnode
+            return -1
         }
-        this.size++
-    }
-    middle(){
-       let s=this.head
-       let f=this.head
-       while(f && f.next){
-         s=s.next
-         f=f.next.next
-       } 
-       return s
-    }
-    reverse(){
+        if(this.size===1){
+            this.head= null
+            this.tail = null
+        }
+        let s=this.head
+        let f=this.head
         let prev=null
-        let curr=this.head
-        while(curr){
-            let next=curr.next
-            curr.next=prev
-            prev=curr
-            curr=next
+        while(f !=null && f.next !=null){
+            prev =s
+            s=s.next
+            f= f.next.next
         }
-        this.head=prev
+        if(prev !== null){
+            prev.next=s.next
+            if(s==this.tail){
+                this.tail=prev
+            }
+        }
+     this.size--
     }
-    display(){
-        let current =this.head
-        while(current!=null){
-            console.log(current.data);
+    display(value){
+        let current = this.head
+        while(current != null){
+            console.log(current.value);
             current=current.next
         }
     }
+
 }
 
-const list = new Linkedlist()
-list.appent(23)
-list.appent(90)
-list.prepent(12)
-list.prepent(14)
-list.prepent(15)
-list.prepent(27)
-list.prepent(17)
-list.reverse()
-console.log(list.middle().data,'middle element kitty');
-list.display()
+
+const link = new Linkedlist()
+
+link.append(2)
+link.append(4)
+link.append(8)
+link.append(6)
+link.deletemiddle()
+link.display()
