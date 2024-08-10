@@ -625,72 +625,139 @@
 
 // 
 
-class Node{
-    constructor(value){
-        this.value=value
-        this.next=null
-    }
-}
-class Linkedlist{
-    constructor(){
-        this.head=null
-        this.tail=null
-        this.size=0
-    }
-    isempty(){
-        return this.size===0
-    }
-    append(value){
-        const node=new Node(value)
-        if(this.isempty()){
-            this.head=node
-            this.tail=node
-        }else{
-            this.tail.next=node
-            this.tail=node
-        }
-        this.size++
-    }
-    deletemiddle(){
-        if(this.isempty()){
-            return -1
-        }
-        if(this.size===1){
-            this.head= null
-            this.tail = null
-        }
-        let s=this.head
-        let f=this.head
-        let prev=null
-        while(f !=null && f.next !=null){
-            prev =s
-            s=s.next
-            f= f.next.next
-        }
-        if(prev !== null){
-            prev.next=s.next
-            if(s==this.tail){
-                this.tail=prev
-            }
-        }
-     this.size--
-    }
-    display(value){
-        let current = this.head
-        while(current != null){
-            console.log(current.value);
-            current=current.next
-        }
-    }
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+// class Linkedlist{
+//     constructor(){
+//         this.head=null
+//         this.tail=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+//     append(value){
+//         const node=new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             this.tail.next=node
+//             this.tail=node
+//         }
+//         this.size++
+//     }
+//     search(value){
+//         if(this.isempty()){
+//             return -1
+//         }
+//         let i=0
+//         let curr=this.head
+//         while(curr){
+//             if(curr.value === value){
+//                 return i
+//             }
+//             curr=curr.next
+//             i++
+//         }
+//         return -1
+//     }
+//     // search(index){
+//     //     if(this.isempty() || index<0 ||index>=this.size){
+//     //         return -1
+//     //     }
+//     //     if(index===0){
+//     //         return this.head.index
+//     //     }
+//     //     let current = this.head
+//     //     let count=1
+//     //     while(current != null){
+//     //         if(count === index){
+//     //             return current.value
+//     //         }
+//     //         count++
+//     //         current=current.next
+//     //     }
+//     //     return -1
+//     // }
+//     deletemiddle(){
+//         if(this.isempty()){
+//             return -1
+//         }
+//         if(this.size===1){
+//             this.head= null
+//             this.tail = null
+//         }
+//         let s=this.head
+//         let f=this.head
+//         let prev=null
+//         while(f !=null && f.next !=null){
+//             prev =s
+//             s=s.next
+//             f= f.next.next
+//         }
+//         if(prev !== null){
+//             prev.next=s.next
+//             if(s==this.tail){
+//                 this.tail=prev
+//             }
+//         }
+//      this.size--
+//     }
+//     reverse(){
+//         let prev =null
+//         let curr=this.head
+//         while(curr){
+//             let next = curr.next
+//             curr.next=prev
+//             prev=curr
+//             curr=next
+//         }
+//         this.head=prev
+//     }
+//     display(value){
+//         let current = this.head
+//         while(current != null){
+//             console.log(current.value);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+//             current=current.next
+//         }
+//     }
 
-}
+// }
 
 
-const link = new Linkedlist()
+// const link = new Linkedlist()
 
-link.append(2)
-link.append(4)
-link.append(8)
-link.append(6)
-link.deletemiddle()
-link.display()
+// link.append(2)
+// link.append(4)
+// link.append(8)
+// link.append(6)
+// console.log(link.search(),"search kitty");
+// link.reverse()
+// // link.deletemiddle()
+// link.display()  
+
+
+// let array=[1,2,3,4];
+
+// function addArray(array){
+//     if(array.length==0){
+//         return 0;
+//     }
+//     return array.shift()+addArray(array);
+// }
+
+// console.log(addArray(array));
+
+
+// function sum(n){
+//     if(n<0){
+//         return 0
+//     }
+//     return n + sum(n-1)
+// }
+// console.log(sum(6),"kiiiiiiiiii");
