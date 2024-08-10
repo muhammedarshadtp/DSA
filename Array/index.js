@@ -761,3 +761,72 @@
 //     return n + sum(n-1)
 // }
 // console.log(sum(6),"kiiiiiiiiii");
+
+
+
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+
+// class linkedList{
+//     constructor(){
+//         this.head=null
+//         this.tail=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+//     prepent(value){
+//         const node = new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             node.next=this.head
+//             this.head=node
+//         }
+//         this.size++
+//     }
+//     insert(value,index){
+//         if(index < 0 || index > this.size){
+//             return -1
+//         }
+//         if(index===0){
+//             this.prepent(value)
+//         }else{
+//             if(value%2 ==0 ){
+//             const node = new Node(value)
+//             let prev = this.head
+//             for(let i=0;i<index-1;i++){
+//                     prev=prev.next
+                
+//             }
+//             node.next=prev.next
+//             prev.next=node
+//         }
+//         this.size++
+//     }
+//   }
+//     display(){
+//         let current = this.head
+//         while(current != null){
+//             console.log(current.value);
+//                 current = current.next
+//         }
+//     }
+
+// }
+
+// const link = new linkedList()
+
+// link.prepent(23)
+// link.prepent(73)
+// link.prepent(93)
+// link.prepent(33)
+// link.insert(2,2)
+// link.insert(1,4)
+// link.display()
