@@ -833,66 +833,69 @@
 
 
 
-class Node{
-    constructor(value){
-        this.value=value
-        this.next=null
-    }
-}
-class linkedlist{
-    constructor(){
-        this.head=null
-        this.tail=null
-        this.size=0
-    }
-    isempty(){
-        return this.size===0
-    }
-    appent(value){
-        const node = new Node(value)
-        if(this.isempty()){
-            this.head=node
-            this.tail=node
-        }else{
-            this.tail.next=node
-            this.tail=node
-        }
-        this.size++
-    }
-    delete(value){
-        if(this.isempty()){
-            return -1
-        }
-        if(this.head.value===value){
-            this.head=this.head.next
-            this.size--
-            return value
-        }else{
-            let prev =this.head
-            while(prev.next && prev.next.value != value){
-                prev = prev.next
-            }
-            if(prev.next){
-                const remove = prev.next
-                prev.next = remove.next
-                this.size--
-                return value
-            }
-        }
-    }
-    display(){
-        let current = this.head
-        while(current != null){
-            console.log(current.value);
-            current=current.next
-        }
-    }
-}
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+// class linkedlist{
+//     constructor(){
+//         this.head=null
+//         this.tail=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+//     appent(value){
+//         const node = new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             this.tail.next=node
+//             this.tail=node
+//         }
+//         this.size++
+//     }
+//     delete(value){
+//         if(this.isempty()){
+//             return -1
+//         }
+//         if(this.head.value===value){
+//             this.head=this.head.next
+//             this.size--
+//             return value
+//         }else{
+//             let prev =this.head
+//             while(prev.next && prev.next.value != value){
+//                 prev = prev.next
+//             }
+//             if(prev.next){
+//                 const remove = prev.next
+//                 prev.next = remove.next
+//                 this.size--
+//                 return value
+//             }
+//         }
+//     }
+//     display(){
+//         let current = this.head
+//         while(current != null){
+//             console.log(current.value);
+//             current=current.next
+//         }
+//     }
+// }
 
-const link = new linkedlist()
+// const link = new linkedlist()
 
-link.appent(12)
-link.appent(45)
-link.appent(56)
-link.appent(67)
-link.display()
+// link.appent(12)
+// link.appent(45)
+// link.appent(56)
+// link.appent(67)
+// link.delete(45)
+// link.display()
+
+
