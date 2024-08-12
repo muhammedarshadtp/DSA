@@ -171,3 +171,39 @@
 
 // str=str.split('e').join('')
 // console.log(str);
+
+
+//================Largest ward in the string=============//
+
+
+// let str ='muhammed arshad t p'
+
+// let words=str.split(' ')
+
+
+// let largestword =''
+// let maxlength=0
+
+// for(let word of words){
+//     if(word.length > maxlength){
+//         largestword=word
+//         maxlength=word.length
+//     }
+// }
+
+// console.log(largestword);
+
+// let str = 'muhammed arshad t p'
+
+// let newstr=str.replace(/[aeiou]/g,'@')
+
+// console.log(newstr);
+
+
+
+// ==========Prefix=========//
+
+let str='muhammed arshad t p'
+
+let prefix=str[0]
+console.log(prefix);
