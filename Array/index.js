@@ -899,3 +899,67 @@
 // link.display()
 
 
+
+
+// class Node{
+//     constructor(value){
+//         this.value=value
+//         this.next=null
+//     }
+// }
+// class linkedList{
+//     constructor(){
+//         this.head=null
+//         this.tail=null
+//         this.size=0
+//     }
+//     isempty(){
+//         return this.size===0
+//     }
+//     appent(value){
+//         const node = new Node(value)
+//         if(this.isempty()){
+//             this.head=node
+//             this.tail=node
+//         }else{
+//             this.tail.next=node
+//             this.tail=node
+//         }
+//         this.size++
+//     }
+//     travese(){
+//         let current = this.head
+//         let count =0
+//         while(current){
+//             count++
+//             current=current.next
+//         }
+//         console.log(count);
+//         let middle=Math.round(count/2)
+//         console.log(middle,'hhhhh');
+//         let i=0
+//         current=this.head
+//         while(current && i<middle-1){
+//             i++
+//             current = current.next
+//         }
+//         this.head=current
+//     }
+    
+//     display(value){
+//         let result = this.head
+//         while(result != null){
+//             console.log(result.value);
+//             result=result.next
+//         }
+//     }
+// }
+
+// const link = new linkedList()
+
+// link.appent(23)
+// link.appent(90)
+// link.appent(09)
+
+// link.travese()
+// link.display()

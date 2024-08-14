@@ -203,7 +203,21 @@
 
 // ==========Prefix=========//
 
-let str='muhammed arshad t p'
+// let str='muhammed arshad t p'
 
-let prefix=str[0]
-console.log(prefix);
+// let prefix=str[0]
+// console.log(prefix);
+
+
+
+// const str='AAABBCCA'
+
+// const Frequency={}
+
+// for(let char of str){
+//   if(char !== ''){
+//     Frequency[char] = (Frequency[char] || 0) + 1
+//   }
+// }
+
+// console.log(Frequency);
