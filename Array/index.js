@@ -963,3 +963,80 @@
 
 // link.travese()
 // link.display()
+
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+    }
+}
+class linkedlist{
+    constructor(){
+        this.head=null
+        this.tail=null
+        this.size=0
+    }
+    isempty(){
+        return this.size===0
+    }
+    appent(value){
+        const node = new Node(value)
+        if(this.isempty()){
+            this.head=node
+            this.tail=node
+        }else{
+            this.tail.next=node
+            this.tail=node
+        }
+        this.size++
+    }
+   deletemiddle(){
+       let s=this.head
+       let  f=this.head
+       let prev=null
+        while(f && f.next ){
+            prev=s
+            s=s.next
+            f=f.next.next
+        }
+        if(prev){
+            prev.next=s.next
+            if(s === this.tail){
+                this.tail=prev
+            }
+        }
+        this.size--
+       console.log(s.value,'-------------');
+    }
+    travers(){
+        let prev=null
+        let current=this.head
+        while(current){
+            let next=current.next
+            current.next=prev
+            prev=current
+            current=next
+
+        }
+        this.head=prev
+    }
+    display(){
+        let current = this.head
+        while(current != null){
+            console.log(current.value);
+            current = current.next
+        }
+    }
+}
+
+const link = new linkedlist()
+
+
+link.appent(12)
+link.appent(35)
+link.appent(92)
+link.appent(909)
+link.travers()
+link.deletemiddle()
+link.display()
