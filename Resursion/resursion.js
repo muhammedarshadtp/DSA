@@ -134,3 +134,69 @@
 //     }
 //     return isPalindrome(str, start + 1, end - 1);
 // }
+
+
+
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+    }
+}
+class linkedlist{
+    constructor(){
+        this.head=null
+        this.tail=null
+        this.size=0
+    }
+    isempty(){
+        return this.size===0 
+    }
+    appent(value){
+        const node = new Node(value)
+        if(this.isempty()){
+            this.head=node
+            this.tail=node
+        }else{
+            this.tail.next=node
+            this.tail=node
+        }
+        this.size++
+    }
+    middleDelete(){
+        let s=this.head
+        let f=this.head
+        let prev=null
+        while(f && f.next){
+            prev=s
+            s=s.next
+            f=f.next.next
+        }
+        if(prev){
+            prev.next=s.next
+            if(s == this.tail){
+                this.tail=prev
+            }
+            this.size--
+        }
+    }
+    display(){
+        let current = this.head
+        while(current != null){
+            console.log(current.value);
+            current=current.next
+        }
+    }
+    
+}
+
+const link = new linkedlist()
+
+
+link.appent(12)
+link.appent(34)
+link.appent(35)
+link.middleDelete()
+link.display()
+
