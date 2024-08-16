@@ -141,28 +141,28 @@
 // c
 
 
-function RecursionBinarySearch(arr,value){
-    return search(arr,value,0,arr.length-1)
-}
+// function RecursionBinarySearch(arr,value){
+//     return search(arr,value,0,arr.length-1)
+// }
 
-function search(arr,value,leftindex,rightindex){
-    if(leftindex>rightindex){
-        return -1
-    }
-    const middle=Math.floor((leftindex + rightindex)/2)
-    if(value==arr[middle]){
-        return middle
-    }
-    if(value<arr[middle]){
-        return search(arr,value,leftindex,middle-1)
-    }else{
-        return search(arr,value,middle+1,rightindex)
-    }
-}
-let arr=[1,2,3,4,5,6,7]
-// console.log(RecursionBinarySearch(arr,3));
+// function search(arr,value,leftindex,rightindex){
+//     if(leftindex>rightindex){
+//         return -1
+//     }
+//     const middle=Math.floor((leftindex + rightindex)/2)
+//     if(value==arr[middle]){
+//         return middle
+//     }
+//     if(value<arr[middle]){
+//         return search(arr,value,leftindex,middle-1)
+//     }else{
+//         return search(arr,value,middle+1,rightindex)
+//     }
+// }
+// let arr=[1,2,3,4,5,6,7]
+// // console.log(RecursionBinarySearch(arr,3));
 
-let x=RecursionBinarySearch(arr,3)
-arr[x]=0
-console.log(arr);
-console.log(x);
+// let x=RecursionBinarySearch(arr,3)
+// arr[x]=0
+// console.log(arr);
+// console.log(x);
