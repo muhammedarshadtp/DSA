@@ -138,65 +138,31 @@
 
 
 
-class Node{
-    constructor(value){
-        this.value=value
-        this.next=null
-    }
-}
-class linkedlist{
-    constructor(){
-        this.head=null
-        this.tail=null
-        this.size=0
-    }
-    isempty(){
-        return this.size===0 
-    }
-    appent(value){
-        const node = new Node(value)
-        if(this.isempty()){
-            this.head=node
-            this.tail=node
-        }else{
-            this.tail.next=node
-            this.tail=node
-        }
-        this.size++
-    }
-    middleDelete(){
-        let s=this.head
-        let f=this.head
-        let prev=null
-        while(f && f.next){
-            prev=s
-            s=s.next
-            f=f.next.next
-        }
-        if(prev){
-            prev.next=s.next
-            if(s == this.tail){
-                this.tail=prev
-            }
-            this.size--
-        }
-    }
-    display(){
-        let current = this.head
-        while(current != null){
-            console.log(current.value);
-            current=current.next
-        }
-    }
-    
+// c
+
+
+function RecursionBinarySearch(arr,value){
+    return search(arr,value,0,arr.length-1)
 }
 
-const link = new linkedlist()
+function search(arr,value,leftindex,rightindex){
+    if(leftindex>rightindex){
+        return -1
+    }
+    const middle=Math.floor((leftindex + rightindex)/2)
+    if(value==arr[middle]){
+        return middle
+    }
+    if(value<arr[middle]){
+        return search(arr,value,leftindex,middle-1)
+    }else{
+        return search(arr,value,middle+1,rightindex)
+    }
+}
+let arr=[1,2,3,4,5,6,7]
+// console.log(RecursionBinarySearch(arr,3));
 
-
-link.appent(12)
-link.appent(34)
-link.appent(35)
-link.middleDelete()
-link.display()
-
+let x=RecursionBinarySearch(arr,3)
+arr[x]=0
+console.log(arr);
+console.log(x);
