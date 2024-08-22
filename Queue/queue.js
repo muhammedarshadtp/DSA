@@ -1,6 +1,6 @@
 
 
-// ==========Linkedlist using Queue===============//
+// // ==========Linkedlist using Queue===============//
 
 
 // class Node{
@@ -56,3 +56,55 @@
 // myqueue.dequeue()
 
 // myqueue.display()
+
+
+
+class Node{
+    constructor(value){
+        this.value=value
+        this.next=null
+    }
+}
+
+class queue{
+    constructor(){
+        this.head=null
+        this.tail=null
+    }
+    enqueue(value){
+        let node = new Node(value)
+        if(!this.head && !this.tail){
+            this.head=node
+            this.tail=node
+        }else{
+            this.tail.next=node
+            this.tail=node
+        }
+    }
+    dequeue(){
+        if(!this.head){
+            return -1
+        }else{
+            let remove = this.head
+            this.head=this.head.next
+            remove.next=null
+        }
+
+    }
+    display(){
+        let current = this.head
+        while(current != null){
+            console.log(current.value);
+            current=current.next
+        }
+    }
+}
+
+const link = new queue()
+
+link.enqueue(23)
+link.enqueue(90)
+link.enqueue(76)
+link.enqueue(54)
+link.dequeue()
+link.display()
