@@ -49,6 +49,41 @@ class BinarySearchTree{
             }
         }
     }
+    preOrder(root){
+        if(root){
+            console.log(root.value);
+            this.preOrder(root.left)
+            this.preOrder(root.right)
+        }
+    }
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            console.log(root.value);
+            this.inOrder(root.right)
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left)
+            this.postOrder(root.right)
+            console.log(root.value);
+        }
+    }
+    levelOrder(){
+        const queue =[]
+        queue.push(this.root)
+        while(queue.length){
+            let curr=queue.shift()
+            console.log(curr.value);
+            if(curr.left){
+                queue.push(curr.left)
+            }
+            if(curr.right){
+                queue.push(curr.right)
+            }
+        }
+    }
     
 }
 
@@ -56,11 +91,15 @@ const BST = new BinarySearchTree()
 
 console.log('tree is empty',BST.isEmpty());
 
-BST.insert(12)
-BST.insert(22)
+BST.insert(10)
+BST.insert(15)
+BST.insert(5)
+BST.insert(3)
+BST.insert(7)
 
 
-console.log(BST.search(BST.root,10));
-console.log(BST.search(BST.root,20));
-console.log(BST.search(BST.root,12));
-console.log(BST.search(BST.root,1));
+// console.log(BST.search(BST.root,10));
+// console.log(BST.search(BST.root,20));
+// console.log(BST.search(BST.root,12));
+// console.log(BST.search(BST.root,1));
+BST.levelOrder()
