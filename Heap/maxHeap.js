@@ -62,9 +62,9 @@ class MaxHeap{
 
     heapSort(arr){
         let sorted=[]
-        for(let i=0;i<arr.length;i++){
-            this.insert(arr[i])
-        }
+        // for(let i=0;i<arr.length;i++){
+        //     this.insert(arr[i])
+        // }
         while(this.heap.length){
             sorted.push(this.extractMax())
         }
@@ -75,19 +75,19 @@ class MaxHeap{
 
 
 const heap = new MaxHeap()
-// heap.insert(2)
-// heap.insert(6)
-// heap.insert(2)
-// heap.insert(8)
-// heap.insert(30)
+heap.insert(2)
+heap.insert(6)
+heap.insert(2)
+heap.insert(8)
+heap.insert(30)
 
-// console.log(heap.extractMax());
-// console.log(heap.extractMax());
-// console.log(heap.extractMax());
- let arr=[2,6,2,8]
-console.log(heap.heapSort(arr));
+console.log(heap.extractMax());
+console.log(heap.extractMax());
+console.log(heap.extractMax());
+//  let arr=[2,6,2,8]
+// console.log(heap.heapSort(arr));
 
-// console.log(heap.heap);
+console.log(heap.heap);
 
 
 

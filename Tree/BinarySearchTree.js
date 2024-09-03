@@ -52,7 +52,7 @@ class BinarySearchTree{
     // =======DFS==============//
     preOrder(root){
         if(root){
-            console.log(root.value);
+            console.log(root.value,'1');
             this.preOrder(root.left)
             this.preOrder(root.right)
         }
@@ -60,7 +60,7 @@ class BinarySearchTree{
     inOrder(root){
         if(root){
             this.inOrder(root.left)
-            console.log(root.value);
+            console.log(root.value,'2');
             this.inOrder(root.right)
         }
     }
@@ -68,7 +68,7 @@ class BinarySearchTree{
         if(root){
             this.postOrder(root.left)
             this.postOrder(root.right)
-            console.log(root.value);
+            console.log(root.value,'3');
         }
     }
 
@@ -142,8 +142,12 @@ BST.insert(3)
 BST.insert(7)
 
 BST.levelOrder()
+BST.inOrder()
+BST.postOrder()
+console.log(BST.preOrder(BST.root));
+console.log(BST.postOrder(BST.root));
+console.log(BST.inOrder(BST.root));
 
-BST.delete(15)
 console.log('jgyug');
 BST.levelOrder()
 

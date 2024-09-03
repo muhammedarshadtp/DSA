@@ -40,6 +40,17 @@ class trie {
         }
         return true
     }
+    endwith(suffix){
+       
+        let currentNode = this.root
+        for(let char of suffix.split('').reverse().join('')){
+            if(!currentNode.children[char]){
+                return false
+            }
+            currentNode=currentNode.children[char]
+        }
+        return true
+    }
 
 }
 
@@ -48,6 +59,7 @@ let tries = new trie()
 tries.insert("arshad")
 tries.insert('justin')
 tries.insert('aswin')
+console.log(tries.endwith('ni'));
 console.log(tries.startswith('as'));
 console.log(tries.search('arshad'));
 console.log(tries.search("jus"));

@@ -20,8 +20,8 @@ class Graph{
         this.adjacencyList[vertex2].add(vertex1)
     }
     removeEdge(vertex1,vertex2){
-        this.adjacencyList[vertex1].delete(vertex2)
-        this.adjacencyList[vertex2].delete(vertex1)
+        this.adjacencyList[vertex1].delete(vertex2);
+        this.adjacencyList[vertex2].delete(vertex1);
     }
     hasEdge(vertex1,vertex2){
         return (
